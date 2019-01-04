@@ -7,7 +7,7 @@ else
 	arch="i386"
 fi
 
-echo "# Ethereum Wallet Generator"
+echo "# Vapory Wallet Generator"
 echo "# How many keypairs would you like to generate? (type in the number you would like, e.g '5' will generate 5 keypairs.)"
 
 read keysAmount
@@ -31,7 +31,7 @@ if [ "$keysAmount" -eq "$keysAmount" ] 2>/dev/null; then #this checks if input i
 				# get the keecak hash, removing the trailing ' -' and taking the last 40 chars
 				# https://github.com/maandree/sha3sum
 				addr=0x$(echo $pub | lib/$arch/keccak-256sum -x -l | tr -d ' -' | tail -c 41)
-				
+
 				echo "$priv;$pub;$addr";
 			done
 	fi
